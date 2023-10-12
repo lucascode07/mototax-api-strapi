@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pilots",
+  "info": {
+    "singularName": "pilot",
+    "pluralName": "pilots",
+    "displayName": "Pilot"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "cellphone": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "profilePhoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "driverLicense": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::driver-license.driver-license"
+    },
+    "vehicles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vehicle.vehicle"
+    }
+  }
+}

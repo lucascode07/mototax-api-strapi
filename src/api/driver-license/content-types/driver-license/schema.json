@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "driver_licenses",
+  "info": {
+    "singularName": "driver-license",
+    "pluralName": "driver-licenses",
+    "displayName": "Driver License"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "licenseNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "expirationDate": {
+      "type": "date",
+      "required": true
+    },
+    "frontPhoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "backPhoto": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
