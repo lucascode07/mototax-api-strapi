@@ -730,7 +730,7 @@ export interface ApiPilotPilot extends Schema.CollectionType {
     profilePhoto: Attribute.Media & Attribute.Required;
     available: Attribute.Boolean &
       Attribute.Required &
-      Attribute.DefaultTo<true>;
+      Attribute.DefaultTo<false>;
     driverLicense: Attribute.Relation<
       'api::pilot.pilot',
       'oneToOne',
