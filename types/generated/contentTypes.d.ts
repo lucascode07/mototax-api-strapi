@@ -716,6 +716,7 @@ export interface ApiPilotPilot extends Schema.CollectionType {
     singularName: 'pilot';
     pluralName: 'pilots';
     displayName: 'Pilot';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -740,6 +741,7 @@ export interface ApiPilotPilot extends Schema.CollectionType {
       'oneToMany',
       'api::vehicle.vehicle'
     >;
+    password: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "pilot",
     "pluralName": "pilots",
-    "displayName": "Pilot"
+    "displayName": "Pilot",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -34,12 +35,12 @@
       "unique": true
     },
     "profilePhoto": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "available": {
       "type": "boolean",
@@ -55,6 +56,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::vehicle.vehicle"
+    },
+    "password": {
+      "type": "string",
+      "required": true
     }
   }
 }
