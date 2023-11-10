@@ -683,15 +683,17 @@ export interface ApiDriverLicenseDriverLicense extends Schema.CollectionType {
     singularName: 'driver-license';
     pluralName: 'driver-licenses';
     displayName: 'Driver License';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    licenseNumber: Attribute.String & Attribute.Required & Attribute.Unique;
-    expirationDate: Attribute.Date & Attribute.Required;
-    frontPhoto: Attribute.Media & Attribute.Required;
-    backPhoto: Attribute.Media & Attribute.Required;
+    numeroLicencia: Attribute.String & Attribute.Required & Attribute.Unique;
+    fechaVencimiento: Attribute.Date & Attribute.Required;
+    fotoFrontal: Attribute.Media & Attribute.Required;
+    fotoPosterior: Attribute.Media & Attribute.Required;
+    antecedentePolicial: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -722,21 +724,21 @@ export interface ApiPilotPilot extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    lastname: Attribute.String & Attribute.Required;
-    birthday: Attribute.Date & Attribute.Required;
-    email: Attribute.Email & Attribute.Required & Attribute.Unique;
-    cellphone: Attribute.String & Attribute.Required & Attribute.Unique;
-    profilePhoto: Attribute.Media & Attribute.Required;
-    available: Attribute.Boolean &
+    nombres: Attribute.String & Attribute.Required;
+    apellidos: Attribute.String & Attribute.Required;
+    fechaNacimiento: Attribute.Date & Attribute.Required;
+    correo: Attribute.Email & Attribute.Required & Attribute.Unique;
+    celular: Attribute.String & Attribute.Required & Attribute.Unique;
+    fotoPerfil: Attribute.Media & Attribute.Required;
+    habilitado: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    driverLicense: Attribute.Relation<
+    licencia: Attribute.Relation<
       'api::pilot.pilot',
       'oneToOne',
       'api::driver-license.driver-license'
     >;
-    vehicles: Attribute.Relation<
+    vehiculos: Attribute.Relation<
       'api::pilot.pilot',
       'oneToMany',
       'api::vehicle.vehicle'
@@ -766,16 +768,18 @@ export interface ApiVehicleVehicle extends Schema.CollectionType {
     singularName: 'vehicle';
     pluralName: 'vehicles';
     displayName: 'Vehicle';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    licensePlate: Attribute.String & Attribute.Required & Attribute.Unique;
-    year: Attribute.String & Attribute.Required;
-    photo: Attribute.Media & Attribute.Required;
-    circulationCardFront: Attribute.Media & Attribute.Required;
-    circulationCardBack: Attribute.Media & Attribute.Required;
+    placa: Attribute.String & Attribute.Required & Attribute.Unique;
+    anioFabricacion: Attribute.String & Attribute.Required;
+    foto: Attribute.Media & Attribute.Required;
+    tarjetaCirculacionFrontal: Attribute.Media & Attribute.Required;
+    tarjetaCirculacionTrasera: Attribute.Media & Attribute.Required;
+    soat: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

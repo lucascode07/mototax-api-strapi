@@ -4,37 +4,46 @@
   "info": {
     "singularName": "driver-license",
     "pluralName": "driver-licenses",
-    "displayName": "Driver License"
+    "displayName": "Driver License",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "licenseNumber": {
+    "numeroLicencia": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "expirationDate": {
+    "fechaVencimiento": {
       "type": "date",
       "required": true
     },
-    "frontPhoto": {
-      "allowedTypes": [
-        "images"
-      ],
+    "fotoFrontal": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "backPhoto": {
-      "allowedTypes": [
-        "images"
-      ],
+    "fotoPosterior": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "antecedentePolicial": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

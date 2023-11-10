@@ -12,29 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "nombres": {
       "type": "string",
       "required": true
     },
-    "lastname": {
+    "apellidos": {
       "type": "string",
       "required": true
     },
-    "birthday": {
+    "fechaNacimiento": {
       "type": "date",
       "required": true
     },
-    "email": {
+    "correo": {
       "type": "email",
       "required": true,
       "unique": true
     },
-    "cellphone": {
+    "celular": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "profilePhoto": {
+    "fotoPerfil": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -42,17 +42,17 @@
         "images"
       ]
     },
-    "available": {
+    "habilitado": {
       "type": "boolean",
       "default": false,
       "required": true
     },
-    "driverLicense": {
+    "licencia": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::driver-license.driver-license"
     },
-    "vehicles": {
+    "vehiculos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::vehicle.vehicle"
